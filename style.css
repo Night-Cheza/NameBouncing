@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Sans-serif;
+  }
+
+  .container {
+    margin: 25px;
+    background-color: rgba(255, 228, 196, 0.712);
+    height:100vh;
+  }
+
+  h2 {
+    padding: 15px;
+    text-align: center;
+    color:rgb(1, 1, 75);
+  }
+
+  form {
+   text-align: center;
+  }
+
+ 
+  button {    
+    margin-top: 15px;
+    border: 1px solid rgba(19, 12, 12, 0.562);
+    color:black;
+    border-radius: 10px;
+    padding:5px 10px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color: rgba(231, 179, 111, 0.644);
+  }
+
+.bounce-field {
+  border: 1px outset black;
+  height:80%;
+  width:80%;
+  margin: 2% 10%;
+  background-color: rgba(255, 248, 220, 0.863);
+  text-align: center;
+}
+
+input {
+  text-align: center;
+  padding: 5px 10px;
+}
