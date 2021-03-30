@@ -166,7 +166,4 @@ const NewName = new NameBounce()
 
 function drawText({ text = "", location: [x, y] = [0, 0], bold = false }) {
     addEventListener// Draw text
-}
-// Call drawText with an object literal
-let NewName = { text: "someText", location:  [x = 0, y = 0], style: false};
-drawText(nameEl); */
+} */
