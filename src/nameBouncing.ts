@@ -39,6 +39,7 @@ class NameBounce {
         } else {
             return (this.enteredName.value);
         }
+        console.log()
     }
 
     private clearInputs () {
