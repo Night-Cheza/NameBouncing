@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Sans-serif;
+    font-family:Sans-serif ;
   }
 
   .container {
@@ -18,10 +18,9 @@
   }
 
   form {
-   text-align: center;
+    text-align: center;
   }
-
- 
+  
   button {    
     margin-top: 15px;
     border: 1px solid rgba(19, 12, 12, 0.562);
@@ -34,16 +33,16 @@
     background-color: rgba(231, 179, 111, 0.644);
   }
 
-.bounce-field {
-  border: 1px outset black;
-  height:80%;
-  width:80%;
-  margin: 2% 10%;
-  background-color: rgba(255, 248, 220, 0.863);
-  text-align: center;
-}
+  canvas{
+    height: 80%;
+    width: 80%;
+    border: 1px outset black;
+    margin: 2% 10%;
+    background-color: rgba(255, 248, 220, 0.863);
+    text-align: center;
+  }
 
-input {
-  text-align: center;
-  padding: 5px 10px;
-}
+  input {
+    text-align: center;
+    padding: 5px 10px;
+  }
