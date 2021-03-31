@@ -22,50 +22,54 @@ class NameBounce {
         this.nameToCanvas.font = "35px Sans-serif";
       
         this.buttonHandler();  
-    }
-
-    private submitName (event: Event) {
-        event.preventDefault();
-        const userInput = this.enteredName.value;
-        console.log (userInput)
         this.clearInputs();
+        this.bounceText();
     }
 
     private buttonHandler () {
-        this.button.addEventListener ("submit", this.submitName);
+        this.button.addEventListener ("submit", () =>{});
 
-        if (!this.enteredName.value) {
+        if (!this.nameInput) {
             throw new Error ("Invalid input. Please enter your name");
         } else {
-            return (this.enteredName.value);
+            return (this.nameInput);
         }
-        console.log()
     }
 
     private clearInputs () {
-        this.enteredName.value = "";
+        this.nameInput = "";
     }
-
-    
+   
 
     private bounceText() {          
         let bouncingName = this.nameToCanvas.measureText(this.nameInput);
             
-        const x = this.canvas.width;
-        const y = this.canvas.height;
+        const x = this.canvas.width/2;
+        const y = this.canvas.height-30;
+      //  const dx = 2;
+       // const dy = -2;
 
-        const bouncNameWidth = bouncingName.width;
-        const collideNameWidth = ;  
+        //const bouncNameWidth = bouncingName.width;
+        //const collideNameWidth = ;  
         this.nameToCanvas.beginPath();
-        this.nameToCanvas()
-        //ctx.fill();
-        //ctx.closePath();
-    
+        this.nameToCanvas.moveTo(x,0);
+        this.nameToCanvas.lineTo(x,y);
+        this.nameToCanvas.moveTo(x,0);
+        this.nameToCanvas.stroke();
+        this.nameToCanvas.textAlign = "left";
+        this.nameToCanvas.fillText('left-aligned', x, y);
+        this.nameToCanvas.textAlign = "center";
+        this.nameToCanvas.fillText('center-aligned', x/2, y/2)
+        this.nameToCanvas.textAlign = "right"
+        this.nameToCanvas.fillText('right-aligned', -x, -y)
+        this.nameToCanvas.moveTo(x,0)
+        this.nameToCanvas.closePath();
+   
     }
 }
 
 
 
-const NewName = new NameBounce()
+const NewName = new NameBounce();
 
-console.log(NewName)
+console.log(NewName);
