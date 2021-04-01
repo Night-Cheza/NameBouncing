@@ -5,24 +5,22 @@ class NameBounce {
         this.form = document.querySelector("form");
         this.nameField = this.form.firstElementChild;
         this.enteredName = this.nameField.querySelector("input");
-        //const nameInput = this.enteredName.value;
+        this.nameInput = this.enteredName.value;
         this.button = document.querySelector("button");
         this.buttonHandler();
         // this.bounceText();
     }
     buttonHandler() {
-        console.log("Hi!");
-        this.form.addEventListener("submit", () => {
-            const nameInput = this.enteredName.value;
-            console.log("1 Hello!");
-            if (!nameInput) {
+        this.form.addEventListener("submit", (event) => {
+            this.nameInput = this.enteredName.value;
+            event.preventDefault();
+            if (!this.nameInput) {
                 throw new Error("Invalid input. Please enter your name");
             }
             else {
-                return (nameInput);
+                console.log(this.nameInput);
             }
         });
-        console.log("Nya!");
         this.clearInputs();
     }
     clearInputs() {
@@ -50,4 +48,4 @@ class NameBounce {
     }
 }
 const NewName = new NameBounce();
-console.log(NewName.enteredName.value);
+//console.log(NewName.enteredName.value);

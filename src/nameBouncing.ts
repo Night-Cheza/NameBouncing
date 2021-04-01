@@ -4,13 +4,14 @@ class NameBounce {
     nameField: HTMLFormElement;
     enteredName: HTMLInputElement;
     button: HTMLButtonElement;
+    nameInput: string;
      
         constructor () {
         this.container = <HTMLDivElement> document.getElementById("container");
         this.form = <HTMLFormElement> document.querySelector("form")
         this.nameField = <HTMLFormElement> this.form.firstElementChild!;
         this.enteredName = <HTMLInputElement>this.nameField.querySelector("input");
-        //const nameInput = this.enteredName.value;
+        this.nameInput = "";
         this.button = <HTMLButtonElement> document.querySelector("button");
  
         this.buttonHandler(); 
@@ -19,18 +20,17 @@ class NameBounce {
     
 
     private buttonHandler () {
-        console.log("Hi!")
-        this.form.addEventListener ("submit", () =>{            
-            const nameInput = this.enteredName.value;
-            console.log("1 Hello!")
-            if (!nameInput) {
+        this.form.addEventListener ("submit", (event) =>{ 
+            this.nameInput = this.enteredName.value;
+            event.preventDefault();
+
+            if (!this.nameInput) {
                 throw new Error ("Invalid input. Please enter your name");
             } else {
-                return (nameInput);
-            }
+                console.log(this.nameInput);
+            }            
         });
-        console.log("Nya!")
-
+    
         this.clearInputs();
     }
 
@@ -76,4 +76,4 @@ function drawText(txt, x, y) {
 
 const NewName = new NameBounce();
 
-console.log(NewName.enteredName.value);
+//console.log(NewName.enteredName.value);
