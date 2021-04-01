@@ -4,51 +4,50 @@ class NameBounce {
         this.container = document.getElementById("container");
         this.form = document.querySelector("form");
         this.nameField = this.form.firstElementChild;
-        this.nameField.id = "name-field";
         this.enteredName = this.nameField.querySelector("input");
-        this.nameInput = this.enteredName.value;
+        //const nameInput = this.enteredName.value;
         this.button = document.querySelector("button");
-        this.canvas = document.getElementById("bounce-field");
-        this.nameToCanvas = this.canvas.getContext("2d");
-        this.nameToCanvas.font = "35px Sans-serif";
         this.buttonHandler();
-        this.clearInputs();
-        this.bounceText();
+        // this.bounceText();
     }
     buttonHandler() {
-        this.button.addEventListener("submit", () => { });
-        if (!this.nameInput) {
-            throw new Error("Invalid input. Please enter your name");
-        }
-        else {
-            return (this.nameInput);
-        }
+        console.log("Hi!");
+        this.form.addEventListener("submit", () => {
+            const nameInput = this.enteredName.value;
+            console.log("1 Hello!");
+            if (!nameInput) {
+                throw new Error("Invalid input. Please enter your name");
+            }
+            else {
+                return (nameInput);
+            }
+        });
+        console.log("Nya!");
+        this.clearInputs();
     }
     clearInputs() {
-        this.nameInput = "";
+        this.enteredName.value = "";
     }
     bounceText() {
-        let bouncingName = this.nameToCanvas.measureText(this.nameInput);
-        const x = this.canvas.width / 2;
-        const y = this.canvas.height - 30;
-        //  const dx = 2;
-        // const dy = -2;
-        //const bouncNameWidth = bouncingName.width;
-        //const collideNameWidth = ;  
-        this.nameToCanvas.beginPath();
-        this.nameToCanvas.moveTo(x, 0);
-        this.nameToCanvas.lineTo(x, y);
-        this.nameToCanvas.moveTo(x, 0);
-        this.nameToCanvas.stroke();
-        this.nameToCanvas.textAlign = "left";
-        this.nameToCanvas.fillText('left-aligned', x, y);
-        this.nameToCanvas.textAlign = "center";
-        this.nameToCanvas.fillText('center-aligned', x / 2, y / 2);
-        this.nameToCanvas.textAlign = "right";
-        this.nameToCanvas.fillText('right-aligned', -x, -y);
-        this.nameToCanvas.moveTo(x, 0);
-        this.nameToCanvas.closePath();
+        const canvas = document.getElementById("bounce-field");
+        const nameToCanvas = canvas.getContext("2d");
+        nameToCanvas.font = "20px Sans-serif";
+        const convertedNameInput = this.enteredName.value;
+        const x = canvas.width / 2;
+        const y = canvas.height - 30;
+        nameToCanvas.beginPath();
+        nameToCanvas.moveTo(x, 0);
+        nameToCanvas.moveTo(x, 0);
+        nameToCanvas.stroke();
+        nameToCanvas.textAlign = "left";
+        nameToCanvas.fillText(this.enteredName.value, x, y);
+        nameToCanvas.textAlign = "center";
+        nameToCanvas.fillText(this.enteredName.value, x / 2, y / 2);
+        nameToCanvas.textAlign = "right";
+        nameToCanvas.fillText(this.enteredName.value, -x, -y);
+        nameToCanvas.moveTo(x, 0);
+        nameToCanvas.closePath();
     }
 }
 const NewName = new NameBounce();
-console.log(NewName);
+console.log(NewName.enteredName.value);
