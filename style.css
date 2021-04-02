@@ -33,7 +33,8 @@
     background-color: rgba(231, 179, 111, 0.644);
   }
 
-  canvas{
+  textarea {
+    display:block;
     height: 80%;
     width: 80%;
     border: 1px outset black;

@@ -5,46 +5,48 @@ class NameBounce {
         this.form = document.querySelector("form");
         this.nameField = this.form.firstElementChild;
         this.enteredName = this.nameField.querySelector("input");
-        this.nameInput = this.enteredName.value;
+        this.nameInput = "";
         this.button = document.querySelector("button");
+        this.textArea = document.getElementById("bounce-field");
         this.buttonHandler();
-        // this.bounceText();
+        // this.clearInputs();
+        this.AnimateText();
     }
     buttonHandler() {
         this.form.addEventListener("submit", (event) => {
             this.nameInput = this.enteredName.value;
             event.preventDefault();
             if (!this.nameInput) {
-                throw new Error("Invalid input. Please enter your name");
+                throw Error("Invalid input. Please enter your name");
             }
             else {
                 console.log(this.nameInput);
             }
         });
-        this.clearInputs();
     }
-    clearInputs() {
-        this.enteredName.value = "";
-    }
-    bounceText() {
-        const canvas = document.getElementById("bounce-field");
-        const nameToCanvas = canvas.getContext("2d");
-        nameToCanvas.font = "20px Sans-serif";
-        const convertedNameInput = this.enteredName.value;
-        const x = canvas.width / 2;
-        const y = canvas.height - 30;
-        nameToCanvas.beginPath();
-        nameToCanvas.moveTo(x, 0);
-        nameToCanvas.moveTo(x, 0);
-        nameToCanvas.stroke();
-        nameToCanvas.textAlign = "left";
-        nameToCanvas.fillText(this.enteredName.value, x, y);
-        nameToCanvas.textAlign = "center";
-        nameToCanvas.fillText(this.enteredName.value, x / 2, y / 2);
-        nameToCanvas.textAlign = "right";
-        nameToCanvas.fillText(this.enteredName.value, -x, -y);
-        nameToCanvas.moveTo(x, 0);
-        nameToCanvas.closePath();
+    // private clearInputs () {
+    //this.nameInput = "";
+    //}
+    AnimateText() {
+        this.nameInput = this.enteredName.value;
+        this.textArea.value = this.nameInput;
+        const bouncingName = this.textArea.value;
+        //     <script type="text/javascript">
+        //     function RemoveContent () {
+        //         var srcObj = document.getElementById ("src");
+        //         if (document.createRange) {     // all browsers, except IE before version 9
+        //             var rangeObj = document.createRange ();
+        //             rangeObj.selectNodeContents (srcObj);
+        //             rangeObj.deleteContents ();
+        //         }
+        //         else {      // Internet Explorer before version 9
+        //             var rangeObj = document.body.createTextRange ();
+        //             rangeObj.moveToElementText (srcObj);
+        //             rangeObj.select ();
+        //             rangeObj.execCommand ('cut');
+        //         }
+        //     }
+        // </script>
     }
 }
 const NewName = new NameBounce();
