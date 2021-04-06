@@ -18,7 +18,6 @@ class NameBounce {
  
         this.buttonHandler(); 
        // this.clearInputs();
-        this.AnimateText();
     }
     
 
@@ -40,12 +39,21 @@ class NameBounce {
    // private clearInputs () {
         //this.nameInput = "";
     //}
+}
    
         
-    private AnimateText() {  
-        this.nameInput = this.enteredName.value;
-        this.textArea.value = this.nameInput;
+class AnimateText {  
+    nameInput: string;
+    textArea: HTMLTextAreaElement;
+
+    constructor () {
+        this.textArea = <HTMLTextAreaElement> document.getElementById("bounce-field");
+        this.nameInput = "";
         const bouncingName = this.textArea.value;
+    }
+    
+       
+      
 
 
 
@@ -69,7 +77,7 @@ class NameBounce {
     //     }
     // </script>
     
-    }
+    
         
         
     

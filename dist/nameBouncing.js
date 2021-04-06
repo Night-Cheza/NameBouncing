@@ -10,7 +10,6 @@ class NameBounce {
         this.textArea = document.getElementById("bounce-field");
         this.buttonHandler();
         // this.clearInputs();
-        this.AnimateText();
     }
     buttonHandler() {
         this.form.addEventListener("submit", (event) => {
@@ -24,29 +23,12 @@ class NameBounce {
             }
         });
     }
-    // private clearInputs () {
-    //this.nameInput = "";
-    //}
-    AnimateText() {
-        this.nameInput = this.enteredName.value;
-        this.textArea.value = this.nameInput;
+}
+class AnimateText {
+    constructor() {
+        this.textArea = document.getElementById("bounce-field");
+        this.nameInput = "";
         const bouncingName = this.textArea.value;
-        //     <script type="text/javascript">
-        //     function RemoveContent () {
-        //         var srcObj = document.getElementById ("src");
-        //         if (document.createRange) {     // all browsers, except IE before version 9
-        //             var rangeObj = document.createRange ();
-        //             rangeObj.selectNodeContents (srcObj);
-        //             rangeObj.deleteContents ();
-        //         }
-        //         else {      // Internet Explorer before version 9
-        //             var rangeObj = document.body.createTextRange ();
-        //             rangeObj.moveToElementText (srcObj);
-        //             rangeObj.select ();
-        //             rangeObj.execCommand ('cut');
-        //         }
-        //     }
-        // </script>
     }
 }
 const NewName = new NameBounce();
