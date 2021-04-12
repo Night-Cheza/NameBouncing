@@ -28,6 +28,7 @@ class AnimateText {
     constructor() {
         this.textArea = document.getElementById("bounce-field");
         this.nameInput = "";
+        this.textArea.innerHTML = this.nameInput;
         const bouncingName = this.textArea.value;
     }
 }
