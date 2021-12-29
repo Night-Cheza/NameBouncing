@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href = "style.css">
-   
-    <title>NameBouncing</title>
-</head>
-<body>
-    <div class = "container">
-        <h2>Enter your name here</h2>
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewpoint" content = "width = device-width, initial-scale = 1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href = "style.css">
+        <script src = "src/nameBouncing.js" defer></script>
+    
+        <title>NameBouncing</title>
+    </head>
+    <body>
+        <div id = "container">
+            <h2>Enter your name</h2>
 
-        <form>
-            <div class = "name-field">
-                <input type = "text" placeholder = "Your name">
-            </div>      
-            <button type = "submit">Enter</button>      
-        </form>
+            <form onsubmit="getName(); return false">
+                <div id = "name">
+                    <input type = "text" placeholder = "Your name" id = "input" required>
+                </div>
 
-        <textarea id = "bounce-field">  </textarea>
+                <button type = "submit" id = "btn">Enter</button>   
+                
+            </form>
 
-    </div>
+            <div id = "bounceField">
+                <p id = "bounceName"></p>
+            </div>            
 
-</body>
-<script src = "dist/nameBouncing.js" defer></script>
+        </div>
+    </body>
 </html>
