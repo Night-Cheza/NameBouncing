@@ -1,6 +1,3 @@
 # NameBouncing v.1
-trying things myself
 
-Dec 28, 2021
-v.2:
-html and ts files reworked
+The app takes name as an input from a user and bounce it within set boundaries
